@@ -1,5 +1,4 @@
 import streamlit as st
-%%writefile app.py
 st.header("my first app")
 name = st.text_input("enter your name")
 btn=st.button("show")
