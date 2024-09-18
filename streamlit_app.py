@@ -34,9 +34,9 @@ file = st.file_uploader("upload a file",type=['csv'])
 if file is not None:
   df=pd.read_csv(file)
   st.write(df)
-num_row=st.slider('choose num rows',min_value=0,max_value=len(df),step=1)
-names_col=st.multiselect('choose names of columns',df.columns.to_list())
-if names_col:
-  st.write(df[:num_row][names_col])
-else:
-  st.write(df[:num_row])
+  num_row=st.slider('choose num rows',min_value=0,max_value=len(df),step=1)
+  names_col=st.multiselect('choose names of columns',df.columns.to_list())
+  if names_col:
+    st.write(df[:num_row][names_col])
+  else:
+    st.write(df[:num_row])
