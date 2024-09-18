@@ -35,4 +35,6 @@ if file is not None:
   df=pd.read_csv(file)
   st.write(df)
 num_row=st.slider('choose num rows',min_value=0,max_value=len(df),step=1)
-st.write(df[:num_row])
+names_col=st.slider('choose num cols',min_value=0,max_value=len(df.columns),step=1)
+st.multiselect('choose names of columns',df.columns.to_list())
+st.write(df[:num_row][names_col])
