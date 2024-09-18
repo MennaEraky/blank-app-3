@@ -1,6 +1,6 @@
 import streamlit as st
 import time
-import plotly.express as px
+import plotly.express as px 
 st.header("my first app ")
 st.sidebar.title("calculate Area app 1")
 name = st.text_input("enter your name")
@@ -41,5 +41,8 @@ if file is not None:
       st.write(df[:num_row][names_col])
   else:
       st.write(df[:num_row])
-fig=px.scatter(df,x='population',y='total_rooms')
+num_col=df.select_dtypes(include='number').columns.to_list()
+x_col=st.selectbox('choose x axis',num_col)
+y_col=st.selectbox('choose y axis',num_col)
+fig=px.scatter(df,x=x_col,y=y_col)
 st.plotly_chart(fig)
