@@ -1,7 +1,7 @@
 import streamlit as st
 import time
+st.header("my first app ")
 st.sidebar.title("calculate Area app 1")
-st.header("my first app")
 name = st.text_input("enter your name")
 btn=st.button("show")
 if btn:
