@@ -1,5 +1,6 @@
 import streamlit as st
-st.sidebar.title("sidebar")
+import time
+st.sidebar.title("calculate Area")
 st.header("my first app")
 name = st.text_input("enter your name")
 btn=st.button("show")
@@ -7,7 +8,7 @@ if btn:
     st.write("hello",name)
 #app 1
 area=None
-st.header("calculate Area")
+#st.header("calculate Area")
 
 with st.sidebar:
   choose=st.selectbox('choose the shape',['circle','rectangle'])
@@ -23,4 +24,6 @@ with st.sidebar:
 
   btn=st.button('calculate')
   if btn:
+      with st.spinner('calculating...'):
+        time.sleep(1)
       st.write("the area is",area)
