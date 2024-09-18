@@ -53,3 +53,6 @@ if file is not None:
 
     fig=px.scatter(df,x=x_col,y=y_col,color=color)
     st.plotly_chart(fig)
+    x_col=st.selectbox('choose x axis',num_col)
+    fig2=px.histogram(df,x=x_col)
+    st.plotly_chart(fig2)
