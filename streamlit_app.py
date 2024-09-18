@@ -3,7 +3,7 @@ import streamlit as st
 #app 1
 area=None
 st.header("calculate Area")
-choose=st.selectbos('choose the shape',['circle','rectangle'])
+choose=st.selectbox('choose the shape',['circle','rectangle'])
 if choose == 'circle':
     r=st.number_input("enter the radius",min_value=1,max_value=100)
     area=r*r*3.14
