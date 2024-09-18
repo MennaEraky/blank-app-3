@@ -56,6 +56,5 @@ if file is not None:
         fig=px.scatter(df,x=x_col,y=y_col,color=color)
         st.plotly_chart(fig)
     with tab2:
-        x=st.selectbox('choose x column',num_col)
-        fig2=px.histogram(df,x=x_col)
+        fig2=px.histogram(df,x='population')
         st.plotly_chart(fig2)
