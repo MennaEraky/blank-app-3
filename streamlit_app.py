@@ -43,16 +43,19 @@ if file is not None:
       st.write(df[:num_row])
     num_col=df.select_dtypes(include='number').columns.to_list()
     
-    col1,col2,col3=st.columns(3)
-    with col1:
-      x_col=st.selectbox('choose x axis',num_col)
-    with col2:
-      y_col=st.selectbox('choose y axis',num_col)
-    with col3:
-      color=st.selectbox('choose color',num_col)
-
-    fig=px.scatter(df,x=x_col,y=y_col,color=color)
-    st.plotly_chart(fig)
+    tab1,tab2=st.tab(['scatter','histogram'])
+    with tab1:
+        col1,col2,col3=st.columns(3)
+        with col1:
+          x_col=st.selectbox('choose x axis',num_col)
+        with col2:
+          y_col=st.selectbox('choose y axis',num_col)
+        with col3:
+          color=st.selectbox('choose color',num_col)
     
-    fig2=px.histogram(df,x=x_col)
-    st.plotly_chart(fig2)
+        fig=px.scatter(df,x=x_col,y=y_col,color=color)
+        st.plotly_chart(fig)
+    with tab2:
+        x=st.selectbox('choose x column',num_col)
+        fig2=px.histogram(df,x=x_col)
+        st.plotly_chart(fig2)
