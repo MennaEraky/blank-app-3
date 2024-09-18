@@ -27,3 +27,10 @@ with st.sidebar:
       with st.spinner('calculating...'):
         time.sleep(5)
       st.write("the area is",area)
+#app 2
+import pandas as pd
+st.header("file upload app2")
+file = st.file_uploader("upload a file",type=['csv'])
+if file is not None:
+  df=pd.read_csv(file)
+  st.write(df)
