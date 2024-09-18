@@ -1,5 +1,10 @@
 import streamlit as st
-
+%%writefile app.py
+st.header("my first app")
+name = st.text_input("enter your name")
+btn=st.button("show")
+if btn:
+    st.write("hello",name)
 #app 1
 area=None
 st.header("calculate Area")
