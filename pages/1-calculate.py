@@ -1,9 +1,8 @@
-
 import streamlit as st
-import time
-import plotly.express as px 
-st.header("my first app ")
-name = st.text_input("enter your name")
-btn=st.button("show")
+st.header("session state ")
+item = st.text_input("add item")
+st.session_state.fruits=[]
+btn=st.button("add")
 if btn:
-    st.write("hello",name)
+    st.session_state.fruits.append(item)
+st.write(st.session_state.fruits)
